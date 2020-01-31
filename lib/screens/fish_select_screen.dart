@@ -1,13 +1,22 @@
 import 'package:flutter/material.dart';
 
 class FishSelectScreen extends StatefulWidget {
+  FishSelectScreen({@required this.fish});
+
+  final fish;
+
   @override
   _FishSelectScreenState createState() => _FishSelectScreenState();
 }
 
 class _FishSelectScreenState extends State<FishSelectScreen> {
-  final List<String> entries = <String>['A', 'B', 'C'];
-  final List<int> colorCodes = <int>[600, 500, 100];
+  List<String> fishList;
+
+  @override
+  void initState() {
+    super.initState();
+    fishList = widget.fish;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,16 +30,16 @@ class _FishSelectScreenState extends State<FishSelectScreen> {
           Expanded(
             child: ListView.separated(
               padding: const EdgeInsets.all(8),
-              itemCount: entries.length,
+              itemCount: fishList.length,
               itemBuilder: (BuildContext context, int index) {
                 return GestureDetector(
                   onTap: () {
-                    Navigator.pop(context, entries[index]);
+                    Navigator.pop(context, fishList[index]);
                   },
                   child: Container(
                     height: 50,
-                    color: Colors.amber[colorCodes[index]],
-                    child: Center(child: Text('Entry ${entries[index]}')),
+                    color: Colors.blueGrey.shade300,
+                    child: Center(child: Text('${fishList[index]}')),
                   ),
                 );
               },
