@@ -1,6 +1,6 @@
 # Freshwater Aquarium Compatibility App (Flutter Version)
 
-This application offers a simple comparison between common freshwater species for compatibility. It functions similar to species look up tables found online except with a simple user interface and
+This application offers a simple comparison between common freshwater species for compatibility. It functions similar to species look up tables found online except with a simple user interface and ability to combine multiple species groups.
 
 ## Motivation
 
